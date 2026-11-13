@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="486" viewBox="0 0 680 486" role="img">
+  <title>Daysmark module architecture</title>
+  <desc>The DaysMark app and the DaysMarkWidget extension depend on the DaysMarkKit package. Inside it, OnboardingFeature, EventsFeature and SettingsFeature each use both DesignSystem and DaysMarkCore, which are independent of each other; EventsFeature presents SettingsFeature. DesignSystem builds on SunKit, and DaysMarkCore stores data in SwiftData with private iCloud sync.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; dominant-baseline: central; }
+    .title { font-size: 14px; font-weight: 500; }
+    .sub { font-size: 12px; }
+    .arrow { stroke: #888780; stroke-width: 1.5; fill: none; }
+    .purple rect { fill: #EEEDFE; stroke: #534AB7; } .purple .title { fill: #3C3489; } .purple .sub { fill: #534AB7; }
+    .teal rect { fill: #E1F5EE; stroke: #0F6E56; } .teal .title { fill: #085041; } .teal .sub { fill: #0F6E56; }
+    .gray rect { fill: #F1EFE8; stroke: #5F5E5A; } .gray .title { fill: #2C2C2A; } .gray .sub { fill: #5F5E5A; }
+    .coral rect { fill: #FAECE7; stroke: #993C1D; } .coral .title { fill: #712B13; } .coral .sub { fill: #993C1D; }
+    .plain rect { fill: #FFFFFF; stroke: #888780; } .plain .title { fill: #444441; font-weight: 400; }
+    @media (prefers-color-scheme: dark) {
+      .arrow { stroke: #B4B2A9; }
+      .purple rect { fill: #3C3489; stroke: #AFA9EC; } .purple .title { fill: #EEEDFE; } .purple .sub { fill: #CECBF6; }
+      .teal rect { fill: #085041; stroke: #5DCAA5; } .teal .title { fill: #E1F5EE; } .teal .sub { fill: #9FE1CB; }
+      .gray rect { fill: #444441; stroke: #B4B2A9; } .gray .title { fill: #F1EFE8; } .gray .sub { fill: #D3D1C7; }
+      .coral rect { fill: #712B13; stroke: #F0997B; } .coral .title { fill: #FAECE7; } .coral .sub { fill: #F5C4B3; }
+      .plain rect { fill: #2C2C2A; stroke: #B4B2A9; } .plain .title { fill: #D3D1C7; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#888780" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <g class="purple">
+    <rect x="50" y="40" width="270" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="185" y="58" text-anchor="middle">DaysMark</text>
+    <text class="sub" x="185" y="78" text-anchor="middle">App entry, Intents, lifecycle</text>
+  </g>
+  <g class="purple">
+    <rect x="360" y="40" width="270" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="495" y="58" text-anchor="middle">DaysMarkWidget</text>
+    <text class="sub" x="495" y="78" text-anchor="middle">Widgets, Live Activity</text>
+  </g>
+
+  <line class="arrow" x1="185" y1="96" x2="185" y2="138" marker-end="url(#arrow)"/>
+  <line class="arrow" x1="495" y1="96" x2="495" y2="138" marker-end="url(#arrow)"/>
+
+  <g class="teal">
+    <rect x="50" y="140" width="580" height="226" rx="20" stroke-width="0.5"/>
+    <text class="title" x="70" y="164">DaysMarkKit</text>
+    <text class="sub" x="610" y="164" text-anchor="end">one local Swift package</text>
+  </g>
+  <g class="gray">
+    <rect x="70" y="186" width="164" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="152" y="204" text-anchor="middle">OnboardingFeature</text>
+    <text class="sub" x="152" y="224" text-anchor="middle">First launch</text>
+  </g>
+  <g class="gray">
+    <rect x="258" y="186" width="164" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="340" y="204" text-anchor="middle">EventsFeature</text>
+    <text class="sub" x="340" y="224" text-anchor="middle">Home, Detail, Editor</text>
+  </g>
+  <g class="gray">
+    <rect x="446" y="186" width="164" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="528" y="204" text-anchor="middle">SettingsFeature</text>
+    <text class="sub" x="528" y="224" text-anchor="middle">Settings, Import</text>
+  </g>
+
+  <line class="arrow" x1="422" y1="214" x2="444" y2="214" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M152 242V260M340 242V260M528 242V260M152 260H528"/>
+  <line class="arrow" x1="202" y1="260" x2="202" y2="282" marker-end="url(#arrow)"/>
+  <line class="arrow" x1="478" y1="260" x2="478" y2="282" marker-end="url(#arrow)"/>
+
+  <g class="gray">
+    <rect x="70" y="284" width="264" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="202" y="302" text-anchor="middle">DesignSystem</text>
+    <text class="sub" x="202" y="322" text-anchor="middle">Colours, fonts, components</text>
+  </g>
+  <g class="gray">
+    <rect x="346" y="284" width="264" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="478" y="302" text-anchor="middle">DaysMarkCore</text>
+    <text class="sub" x="478" y="322" text-anchor="middle">Models, Repositories, Services</text>
+  </g>
+
+  <line class="arrow" x1="202" y1="340" x2="202" y2="408" marker-end="url(#arrow)"/>
+  <line class="arrow" x1="478" y1="340" x2="478" y2="408" marker-end="url(#arrow)"/>
+
+  <g class="coral">
+    <rect x="70" y="410" width="264" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="202" y="428" text-anchor="middle">SunKit</text>
+    <text class="sub" x="202" y="448" text-anchor="middle">SunUserInterface</text>
+  </g>
+  <g class="plain">
+    <rect x="346" y="410" width="264" height="56" rx="8" stroke-width="0.5"/>
+    <text class="title" x="478" y="438" text-anchor="middle">SwiftData + private iCloud</text>
+  </g>
+</svg>

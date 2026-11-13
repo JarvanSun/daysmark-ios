@@ -1,0 +1,8 @@
+.DS_Store
+doc/archived/
+xcuserdata/
+DerivedData/
+build/
+.build/
+.swiftpm/
+DaysMarkKit/Package.resolved

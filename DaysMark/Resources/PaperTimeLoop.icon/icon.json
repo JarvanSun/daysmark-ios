@@ -1,0 +1,29 @@
+{
+  "fill": {
+    "solid": "extended-srgb:0.9647,0.9490,0.9137,1.0"
+  },
+  "groups": [
+    {
+      "blur": 0,
+      "layers": [
+        {
+          "glass": false,
+          "image-name": "paper-time-loop.png",
+          "name": "Approved textured paper time loop"
+        }
+      ],
+      "shadow": {
+        "kind": "none",
+        "opacity": 0
+      },
+      "specular": false,
+      "translucency": {
+        "enabled": false,
+        "value": 0
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": "shared"
+  }
+}
